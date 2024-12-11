@@ -3,7 +3,6 @@ from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 from services.load_model import load_model
 from exceptions import InputError
-#from services.food_list import food_list # testing food list
 
 # Initialize Flask app
 app = Flask(__name__)
