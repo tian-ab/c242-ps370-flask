@@ -3,13 +3,13 @@ from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 from services.load_model import load_model
 from exceptions import InputError
-from services.food_list import food_list # testing food list
+#from services.food_list import food_list # testing food list
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Load model (local or cloud)
-MODEL_URL_OR_PATH = os.getenv("https://storage.googleapis.com/capstone-c242-ps370.appspot.com/ml-models/menu-recommendation/Ejajan_recommendation_model.tflite", "./Ejajan_recommendation_model.tflite")  # Default to local if not set
+MODEL_URL_OR_PATH = os.getenv("https://storage.googleapis.com/capstone-c242-ps370.appspot.com/ml-models/face-recognition/siamesemodel.h5", "./siamesemodel.h5")  # Default to local if not set
 model = load_model(MODEL_URL_OR_PATH)
 app.config["model"] = model
 
